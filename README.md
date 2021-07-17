@@ -5,15 +5,15 @@ Program sederhana Ajax Crud dengan CodeIgniter4.
 # Installation
 ### Clone the repository:
 ```
-git clone https://github.com/agungsugiarto/codeigniter4-ajax-crud.git
+git clone https://github.com/yeremiaraulandreas/iuran_kas.git
 ```
 
-### Pindah ke directory codeigniter4-ajax-crud:
+### Pindah ke directory iuran_kas:
 ```
-cd odeigniter4-ajax-crud
+cd iuran_kas
 ```
 
-### Install dependency:
+### Install dependency composer dengan git bash atau terminal:
 ```
 composer install
 ```
