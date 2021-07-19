@@ -101,6 +101,15 @@ $routes->group('warga', function ($routes) {
     ]);
 });
 
+$routes->group('iuran', function ($routes) {
+    $routes->post('datatable', 'TransaksiController::datatable', ['as' => 'datatable2']);
+    $routes->resource('resource', [
+        'controller' => 'TransaksiController',
+        
+    ]);
+    $routes->post('getWarga','TransaksiController::getWarga', ['as' => 'getwarga']);
+});
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing

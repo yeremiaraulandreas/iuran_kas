@@ -45,7 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <div class="collapse navbar-collapse order-3" id="navbarCollapse">
                     <!-- Left navbar links -->
-                    <ul class="navbar-nav">
+                    <ul class="nav nav-pills">
                         <li class="nav-item">
                             <a href="<?= base_url() ?>" class="nav-link">Home</a>
                         </li>
@@ -53,7 +53,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <a href="<?= route_to('warga/resource') ?>" class="nav-link">Warga</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url() ?>" class="nav-link">Iuran Kas</a>
+                            <a href="<?= base_url('iuran/resource') ?>" class="nav-link">Iuran Kas</a>
                         </li>
                         <li class="nav-item">
                             <a href="<?= base_url() ?>" class="nav-link">Laporan</a>

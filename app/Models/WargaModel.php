@@ -64,7 +64,7 @@ class WargaModel extends Model
                 ->like('nik', $search)
                 ->orLike('nama', $search)
                 ->orLike('kelamin', $search)
-                ->orLike('status', $search)
+                ->orLike('alamat', $search)
             ->groupEnd();
 
         return $condition->where([
