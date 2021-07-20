@@ -11,7 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="<?= csrf_token() ?>" content="<?= csrf_hash() ?>">
 
-    <title>Iuran Kas RT </title>
+    <title> Aplikasi Iuran Kas RT </title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
@@ -31,7 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
             <div class="container">
-                <a href="<?= route_to('resource') ?>" class="navbar-brand">
+                <a href="<?= base_url() ?>" class="navbar-brand">
                     <img src="https://cdn.jsdelivr.net/npm/admin-lte@3.0.1/dist/img/AdminLTELogo.png"
                         alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                     <span class="brand-text font-weight-light">Dashboard</span>
@@ -53,10 +53,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <a href="<?= route_to('warga/resource') ?>" class="nav-link">Warga</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('iuran/resource') ?>" class="nav-link">Iuran Kas</a>
+                            <a href="<?= route_to('iuran/resource') ?>" class="nav-link">Iuran Kas</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url() ?>" class="nav-link">Laporan</a>
+                            <a href="<?= route_to('iuran/laporan') ?>" class="nav-link">Laporan</a>
                         </li>
                     </ul>
                 </div>
@@ -72,7 +72,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Iuran Kas <small>Dashboard</small></h1>
+                            <h1 class="m-0 text-dark">Aplikasi Iuran Kas <small></small></h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">

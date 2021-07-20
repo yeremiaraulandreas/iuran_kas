@@ -19,7 +19,6 @@ class TransaksiModel extends Model
 
     protected $validationRules = [
         'warga_id'  => 'required|numeric',
-		'nama'		=> 'required',
         'tanggal'   => 'required',
         'bulan'     => 'required',
 		'jumlah'	=> 'required',
@@ -48,7 +47,7 @@ class TransaksiModel extends Model
     public function getResource(string $search = '')
     {
         $builder = $this->builder()
-            ->select('iuran.id, iu.tanggal, iuran.bulan, iuran.tahun, iuran.jumlah, warga.nama')
+            ->select('iuran.id, iuran.tanggal, iuran.bulan, iuran.tahun, iuran.jumlah, warga.nama')
             ->join('warga', 'iuran.warga_id = warga.id_warga');
 
         $condition = empty($search)
@@ -65,10 +64,21 @@ class TransaksiModel extends Model
             'warga.deleted_at' => null,
         ]);
     }
-	public function getWarga($postData) {
-      $sql = 'select * from warga where nama ='.$postData['nama'] ;
-      $query =  $this->db->query($sql);
-       
-      return $query->getResult();
-    }    
+    public function getWarga() {
+ 
+       $query = $this->db->query('select * from warga');
+       return $query->getResult();
+    }
+    
+    public function laporan($bulan,$tahun)
+    {
+       $query = $this->db->query('SELECT iuran.bulan, iuran.tahun, iuran.jumlah, warga.nama 
+       FROM iuran LEFT JOIN warga ON iuran.warga_id=warga.id_warga WHERE iuran.tahun="'.$tahun.'" AND iuran.bulan="'.$bulan.'"');
+            
+       return $query->getResult();
+        
+
+        
+    }
+ 
 }

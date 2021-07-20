@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\TransaksiModel;
 use App\Controllers\BaseController;
+use App\Models\WargaModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -16,19 +17,15 @@ class TransaksiController extends BaseController
     }
 	public function index()
 	{
-		
-		return view('IuranViews');
+		  // panggil where data id_warga
+      
+
+        $data['warga'] = $this->model->getWarga();
+
+		return view('IuranViews', $data);
 	}
-	public function getWarga() {
- 
-        $postData = array(
-            'nama' => $this->request->getPost('nama'),
-        );
- 
-        $data = $this->model->getWarga($postData);
- 
-        echo json_encode($data);
-    }  
+   
+    
 	 /**
      * Tampilkan daftar index.
      *
@@ -36,6 +33,22 @@ class TransaksiController extends BaseController
      */
     public function show()
     {
+    }
+    /**
+     * Cari laporan.
+     *
+     * @return \CodeIgniter\Http\Response
+     */
+    public function laporan()
+    {   
+        
+        $tahun = $this->request->getPost('tahun');
+        $bulan = $this->request->getPost('bulan');
+
+        $data['data'] = $this->model->laporan($bulan,$tahun);	
+        
+     
+         return view('LaporanViews',$data);
     }
 
     /**

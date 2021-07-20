@@ -107,7 +107,8 @@ $routes->group('iuran', function ($routes) {
         'controller' => 'TransaksiController',
         
     ]);
-    $routes->post('getWarga','TransaksiController::getWarga', ['as' => 'getwarga']);
+    $routes->get('laporan', 'TransaksiController::laporan');
+    
 });
 
 /**

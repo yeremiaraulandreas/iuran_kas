@@ -43,6 +43,88 @@
         <!-- /.col -->
     </div>
 <!-- /.row -->
+<!-- Create Modal Iuran -->
+<div class="modal fade" id="modal-create-iuran" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Iuran</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="form-create-iuran" enctype="multipart/form-data">
+                  <div class="form-row">
+                   
+                        <div class="form-group col-6">
+                            <label for="nama">Nama</label>
+                        <select class="form-control select2" id="namaWarga" name="warga_id">
+                            <option value="">--Pilih Nama--</option>
+                             <?php foreach($warga as $row):?>
+                             <option value="<?= $row->id_warga;?>"><?= $row->nama;?></option>
+                             <?php endforeach;?>
+                           
+                        </select>
+                        </div>
+                  
+                 
+                        <div class="form-group col-6">
+                            <label for="">Tanggal</label>
+                            <input type="date" id="tanggal" name="tanggal" class="form-control">
+                        </div>
+                    
+                  </div>
+                  <div class="row">
+                                <?php $bln = date('m') ?>
+                        <div class="form-group col-md-4">
+                            <label for="">Bulan</label>
+                            <select class="form-control" name="bulan">
+                                <option value="">Pilih Bulan</option>
+                                <option value="01" <?php if ($bln == 1) { echo 'selected'; }?>>Januari</option>
+                                <option value="02" <?php if ($bln == 2) { echo 'selected'; }?>>Februari</option>
+                                <option value="03" <?php if ($bln == 3) { echo 'selected'; }?>>Maret</option>
+                                <option value="04" <?php if ($bln == 4) { echo 'selected'; }?>>April</option>
+                                <option value="05" <?php if ($bln == 5) { echo 'selected'; }?>>Mei</option>
+                                <option value="06" <?php if ($bln == 6) { echo 'selected'; }?>>Juni</option>
+                                <option value="07" <?php if ($bln == 7) { echo 'selected'; }?>>Juli</option>
+                                <option value="08" <?php if ($bln == 8) { echo 'selected'; }?>>Agustus</option>
+                                <option value="09" <?php if ($bln == 9) { echo 'selected'; }?>>September</option>
+                                <option value="10" <?php if ($bln == 10) { echo 'selected'; }?>>Oktober</option>
+                                <option value="11" <?php if ($bln == 11) { echo 'selected'; }?>>November</option>
+                                <option value="12" <?php if ($bln == 12) { echo 'selected'; }?>>Desember</option>
+                            </select>
+                        </div>
+                   
+                        <?php $thn = date('Y')?>
+                        <div class="form-group col-md-4">
+                            <label for="tahun">Tahun </label>
+                            <select class="form-control" name="tahun">
+                            <option value="">Pilih Tahun</option>
+                               <?php for ($i = 2010; $i <= $thn; $i++) { ?>
+                                <option value="<?=$i;?>" <?php if ($thn == $i) { echo 'selected'; }?>>
+                                    <?=$i;?>
+                                </option>
+                                <?php }?>
+                            </select>
+                        </div>
+                
+                        <div class="form-group col-md-4">
+                            <label for="jumlah">Jumlah</label>
+                            <input type="text" id="jumlah" name="jumlah" class="form-control">
+                        </div>
+                 
+                  
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal"><i class="fa fa-times"></i> Batal</button>
+                <button type="button" class="btn btn-primary btn-sm" id="btn-save-iuran"><i class="fa fa-save"></i> Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
 <?= $this->endSection() ?>
 
 
@@ -82,7 +164,46 @@ $(document).ready(function () {
                 "data": "tanggal"
             },
             {
-                "data": "bulan"
+               "data": function(data) {
+                    switch(data.bulan) {
+                        case '1':
+                        return `<span>Januari</span>`
+                        break;
+                        case '2':
+                        return `<span>Februari</span>`
+                        break;
+                        case '3':
+                        return `<span>Maret</span>`
+                        break;
+                        case '4':
+                        return `<span>April</span>`
+                        break;
+                        case '5':
+                        return `<span>Mei</span>`
+                        break;
+                        case '6':
+                        return `<span>Juni</span>`
+                        break;
+                        case '7':
+                        return `<span>Juli</span>`
+                        break;
+                        case '8':
+                        return `<span>Agustus</span>`
+                        break;
+                        case '9':
+                        return `<span>September</span>`
+                        break;
+                        case '10':
+                        return `<span>Oktober</span>`
+                        break;
+                        case '11':
+                        return `<span>November</span>`
+                        break;
+                        case '12':
+                        return `<span>Desember</span>`
+                        break;
+                    }
+                }
             },
             {
                 "data": "tahun"
@@ -95,7 +216,7 @@ $(document).ready(function () {
                 "data": function(data) {
                     return `<td class="text-right py-0 align-middle">
                             <div class="btn-group btn-group-sm">
-                                <button class="btn btn-primary btn-edit" data-id="${data.id}"><i class="fas fa-pencil-alt"></i></button>
+                                
                                 <button class="btn btn-danger btn-delete" data-id="${data.id}"><i class="fas fa-trash"></i></button>
                             </div>
                             </td>`
@@ -112,7 +233,6 @@ $(document).ready(function () {
             cell.innerHTML = i + 1 + PageInfo.start;
         });
     });
-
     $(document).on('click', '#btn-save-iuran', function () {
         $('.text-danger').remove();
         $('.is-invalid').removeClass('is-invalid');
@@ -147,31 +267,6 @@ $(document).ready(function () {
         })
     })
 
-     $(document).ready(function(){
- 
-            $('#namaWarga').change(function(){ 
-                var id=$(this).val();
-                $.ajax({
-                    url : "<?= route_to('getwarga') ?>",
-                    method : "POST",
-                    data : {id: id_warga},
-                    async : true,
-                    dataType : 'json',
-                    success: function(data){
-                         
-                        var html = '';
-                        var i;
-                        for(i=0; i<data.length; i++){
-                            html += '<option value='+data[i].id_warga+'>'+data[i].nama+'</option>';
-                        }
-                      
- 
-                    }
-                });
-                return false;
-            }); 
-             
-        });
     $(document).on('click', '.btn-delete', function (e) {
         Swal.fire({
             title: 'Apa Anda Yakin?',
