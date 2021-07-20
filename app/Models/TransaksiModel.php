@@ -77,7 +77,7 @@ class TransaksiModel extends Model
            
 			$this->join('warga', 'iuran.warga_id = warga.id_warga');
 			$this->where($where);
-			return $this->get()->getResult();
+			return $this->get()->getResultArray();
         
 
         
