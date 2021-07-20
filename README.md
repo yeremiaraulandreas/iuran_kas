@@ -1,4 +1,4 @@
-# CodeIgniter4 Ajax CRUD
+# CodeIgniter 4 Aplikasi Iuran Kas RT 
 
 Program sederhana Ajax Crud dengan CodeIgniter4.
 
@@ -47,7 +47,7 @@ php spark serve
 
 Sekarang buka browser dengan alamat address http://localhost:8080/
 
-# Screenshoot | Demo on [Heroku](https://crud-codeigniter4.herokuapp.com)
+# Screenshoot | Demo on [Iuran-kas](http://iuran-kas.xyz/)
 
 
 
