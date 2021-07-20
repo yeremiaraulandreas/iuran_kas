@@ -41,15 +41,34 @@ class TransaksiController extends BaseController
      */
     public function laporan()
     {       
-        $tahun = $this->request->getPost('tahun');
-        $bulan = $this->request->getPost('bulan');
-        if(!$this->request->getPost()){
-             return view('Laporan');
-        }else{
-             $data['data'] = $this->model->laporan($bulan,$tahun);
+        $bln = date('m');
+		$thn = date('Y');
+
+		if(!$this->request->getPost()){
+
+            $awal = $thn.'-'.$bln.'-'.'01';
+            $akhir = $thn.'-'.$bln.'-'.'31';
+
+			$where = ['tanggal >=' => $awal, 'tanggal <=' => $akhir];
+        	$data['data'] = $this->model->laporan($where);	
+
+		}else{
+			 $bulan = $this->request->getPost('bulan');
+		     $tahun = $this->request->getPost('tahun');
+
+                $awal = $bulan.'-'.$bulan.'-'.'01';
+                $akhir = $tahun.'-'.$bulan.'-'.'31';
+
+             $where = ['tanggal >=' => $awal, 'tanggal <=' => $akhir];
+        	 $data['data'] = $this->model->laporan($where);	
+		}
+
         
-         return view('LaporanViews', $data);
-    }
+            $data['bln'] = [];
+            $data['thn'] = [];
+        
+     
+         return view('LaporanViews',$data);
         }
        
 

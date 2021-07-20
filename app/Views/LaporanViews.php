@@ -69,7 +69,7 @@
                                                 <tr role="row">
                                                     <th>No</th>
                                                     <th>Nama</th>
-                                                    <th>Tanggal</th>
+                                                   
                                                     <th>Bulan</th>
                                                     <th>Tahun</th>
                                                     <th>Jumlah</th>
@@ -86,15 +86,15 @@
                                                 <tr role="row">
                                                     <td><?= $no++; ?></td>
                                                     <td><?= $d['nama']?></td>
-                                                    <td><?= $d['tanggal'] ?></td>
+                                                   
                                                     <td><?= $d['bulan'] ?></td>
                                                     <td><?= $d['tahun'] ?></td>
-                                                    <td><?= $d['jumlah'] ?></td>
+                                                    <td>Rp. <?= number_format($d['jumlah'], 0,',','.'); ?></td>
                                                 </tr>
                                                 <?php endforeach;?>
                                                 <tr role="row">
-                                                    <td colspan="5" class="text-center">Total Jumlah Kas :</td>
-                                                    <td><?= number_format($kas, 0,',','.'); ?></td>
+                                                    <td colspan="4" class="text-center">Total Jumlah Kas :</td>
+                                                    <td>Rp. <?= number_format($kas, 0,',','.'); ?></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -131,7 +131,7 @@ $(document).ready(function () {
         var createForm = $('#form-laporan');
         
         $.ajax({
-            url: '<?= route_to('iuran/LaporanTransaksi') ?>',
+            url: '<?= route_to('iuran/laporan') ?>',
             method: 'POST',
             data: createForm.serialize()
         }).done((data, textStatus) => {
