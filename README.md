@@ -1,6 +1,6 @@
 # CodeIgniter 4 Aplikasi Iuran Kas RT 
 
-Program sederhana Ajax Crud dengan CodeIgniter4.
+Program sederhana Aplikasi Iuran Kas RT menggunakan Ajax dengan CodeIgniter4.
 
 # Installation
 
