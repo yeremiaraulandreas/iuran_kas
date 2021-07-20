@@ -57,6 +57,3 @@ Sekarang buka browser dengan alamat address http://localhost:8080/
 [Delete]![image](https://user-images.githubusercontent.com/81977332/126324275-88ecbef6-d2b3-43f3-9298-2872a2f88ff6.png) 
 [Iuran]![image](https://user-images.githubusercontent.com/51916189/126337644-08be92d8-5b55-4626-8d91-f9568ff9bf3a.png)
 [Laporan]![image](https://user-images.githubusercontent.com/81977332/126368144-1736e74e-425f-4367-9a68-17cc44279b20.png)
-
-
-
