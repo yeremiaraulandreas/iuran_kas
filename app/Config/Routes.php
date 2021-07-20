@@ -105,10 +105,9 @@ $routes->group('iuran', function ($routes) {
     $routes->post('datatable', 'TransaksiController::datatable', ['as' => 'datatable2']);
     $routes->resource('resource', [
         'controller' => 'TransaksiController',
-        
     ]);
     $routes->get('laporan', 'TransaksiController::laporan');
-    
+    $routes->post('laporan', 'LaporanTransaksi::laporan', ['as' => 'laporan']);
 });
 
 /**

@@ -40,16 +40,18 @@ class TransaksiController extends BaseController
      * @return \CodeIgniter\Http\Response
      */
     public function laporan()
-    {   
-        
+    {       
         $tahun = $this->request->getPost('tahun');
         $bulan = $this->request->getPost('bulan');
-
-        $data['data'] = $this->model->laporan($bulan,$tahun);	
+        if(!$this->request->getPost()){
+             return view('Laporan');
+        }else{
+             $data['data'] = $this->model->laporan($bulan,$tahun);
         
-     
-         return view('LaporanViews',$data);
+         return view('LaporanViews', $data);
     }
+        }
+       
 
     /**
      * Simpan resource ke database.

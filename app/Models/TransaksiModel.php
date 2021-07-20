@@ -70,12 +70,14 @@ class TransaksiModel extends Model
        return $query->getResult();
     }
     
-    public function laporan($bulan,$tahun)
+    public function laporan($where)
     {
-       $query = $this->db->query('SELECT iuran.bulan, iuran.tahun, iuran.jumlah, warga.nama 
-       FROM iuran LEFT JOIN warga ON iuran.warga_id=warga.id_warga WHERE iuran.tahun="'.$tahun.'" AND iuran.bulan="'.$bulan.'"');
-            
-       return $query->getResult();
+       
+            $this->select('iuran.id, iuran.bulan, iuran.tahun, iuran.jumlah, warga.nama');
+           
+			$this->join('warga', 'iuran.warga_id = warga.id_warga');
+			$this->where($where);
+			return $this->get()->getResult();
         
 
         

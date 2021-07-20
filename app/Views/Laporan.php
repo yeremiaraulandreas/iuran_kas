@@ -58,53 +58,7 @@
                   </div>
                 </div>
                 <!-- /.card-header -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="dataTables_wrapper dt-bootstrap4">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="table-responsive">
-                                        <table id="table-laporan" class="table table-bordered">
-                                            <thead>
-                                                <tr role="row">
-                                                    <th>No</th>
-                                                    <th>Nama</th>
-                                                    <th>Tanggal</th>
-                                                    <th>Bulan</th>
-                                                    <th>Tahun</th>
-                                                    <th>Jumlah</th>
-                                                    
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php $no = 1;
-                                                    $kas = 0; 
-                                                foreach($data as $d) :
-                                                  $kas += $d['jumlah'];
-                                                 
-                                                ?>
-                                                <tr role="row">
-                                                    <td><?= $no++; ?></td>
-                                                    <td><?= $d['nama']?></td>
-                                                    <td><?= $d['tanggal'] ?></td>
-                                                    <td><?= $d['bulan'] ?></td>
-                                                    <td><?= $d['tahun'] ?></td>
-                                                    <td><?= $d['jumlah'] ?></td>
-                                                </tr>
-                                                <?php endforeach;?>
-                                                <tr role="row">
-                                                    <td colspan="5" class="text-center">Total Jumlah Kas :</td>
-                                                    <td><?= number_format($kas, 0,',','.'); ?></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.card-body -->
-                </div>
+              
             </div>
         </div>
         <!-- /.col -->
