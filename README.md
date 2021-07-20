@@ -22,11 +22,11 @@ cd iuran_kas
 composer install
 ```
 
-### Buat database baru. Kemudian rename .env.example ke .env selanjutnya sesuaikan dengan konfigurasi database:
+### Buat database baru. Kemudian rename file .env.example ke .env selanjutnya sesuaikan dengan konfigurasi database:
 
 ```
 database.default.hostname = localhost
-database.default.database = crud-ci4
+database.default.database = iuran_kas
 database.default.username = root
 database.default.password =
 database.default.DBDriver = MySQLi
@@ -38,17 +38,6 @@ database.default.DBDriver = MySQLi
 php spark migrate
 ```
 
-### Ganti / copy file .env-example jadi .env 
-
-### Buka file .env, ubah config berikut sesuai databasenya. Ganti iuran_kas dengan database anda
-```
-database.default.hostname = localhost
-database.default.database = iuran_kas
-database.default.username = root
-database.default.password = 
-database.default.DBDriver = MySQLi
-
-```
 
 ### Jalankan aplikasi dengan perintah:
 
