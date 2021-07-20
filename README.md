@@ -58,8 +58,8 @@ Sekarang buka browser dengan alamat address http://localhost:8080/
 | --------- | ----- |
 | Dashboard | Warga |
 
-| ![Dashboard](<![image](https://user-images.githubusercontent.com/81977332/126323975-6c9ea99b-b061-408d-bbfc-e3eec3874d09.png)>)
-| ![Warga](<![image](https://user-images.githubusercontent.com/81977332/126324070-381ecd38-36fe-4bc8-b25d-692ad6798d3f.png)>)|
+| ![Dashboard](![image](https://user-images.githubusercontent.com/81977332/126323975-6c9ea99b-b061-408d-bbfc-e3eec3874d09.png)
+| ![Warga](![image](https://user-images.githubusercontent.com/81977332/126324070-381ecd38-36fe-4bc8-b25d-692ad6798d3f.png)|
 | Update | Delete |
-| ![Image of Index](<![image](https://user-images.githubusercontent.com/81977332/126324153-2592c5fc-047d-4659-a233-0f4d23fb6aa7.png)>)
-| ![Image of Index](<![image](https://user-images.githubusercontent.com/81977332/126324275-88ecbef6-d2b3-43f3-9298-2872a2f88ff6.png)>) |
+| ![Image of Index](![image](https://user-images.githubusercontent.com/81977332/126324153-2592c5fc-047d-4659-a233-0f4d23fb6aa7.png)
+| ![Image of Index](![image](https://user-images.githubusercontent.com/81977332/126324275-88ecbef6-d2b3-43f3-9298-2872a2f88ff6.png) |
